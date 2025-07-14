@@ -58,7 +58,7 @@ body {
 .form-header h1::after {
    content: '';
    display: block;
-   width: 9rem;
+   width: 5.5rem;
    height: 0.3rem;
    background-color: rgb(247, 183, 64);
    margin: 0 auto;
@@ -66,18 +66,30 @@ body {
    border-radius: 10px;
 }
 
+.login-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+
+.login-button p {
+   color: #444;
+   font-size: 15px;
+}
+ 
 .login-button button {
-   margin-top: 12px;
+   margin-top: 6px;
    border: none;
-   background-color: rgb(247, 183, 64);
-   padding: 10px 16px;
-   border-radius: 12px;
+   padding: 6px 14px;
+   border-radius: 26px;
    transition: all 0.5s;
    cursor: pointer;
+   background-color: rgb(250, 229, 190);
+   border: 1px solid rgb(255, 166, 0) ;
 }
 
 .login-button button:hover {
-   background-color: rgb(255, 202, 104);
    box-shadow: 2px 2px 2px rgba(2,2,2, .210);
 }
 
@@ -85,7 +97,7 @@ body {
    text-decoration: none;
    font-weight: 600;
    color: #000;
-   font-size: 22px;
+   font-size: 18px;
 }
 
 .form-content {
@@ -112,28 +124,89 @@ body {
 
 .remember-password {
    display: flex;
+   justify-content: center;
+   gap: 7px;
+   margin-top: -11px;
 }
 
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-  color: #444;
-  margin: 30px 0;
+.remember-title p {
+   color: #444;
+   margin-top: 5px;
+   font-size: 15px;
 }
 
-.separator::before,
-.separator::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ccc;
+.remember-password a {
+   font-size: 15px;
+   text-decoration: none;
+   color: rgb(53, 53, 238);
 }
 
-.separator::before {
-  margin-right: 10px;
+.remember-password a:hover {
+   text-decoration:underline;
 }
 
-.separator::after {
-  margin-left: 10px;
+.register-button {
+   display: flex;
+   justify-content: center;
+   margin: 40px 5px;
+}
+
+.register-button button {
+   font-weight: 500;
+   font-size: 22px;
+   padding: 12px 30px;
+   background-color: rgb(250, 229, 190);
+   border: none;
+   border-radius: 26px;
+   border: 1px solid rgb(244, 174, 45) ;
+   cursor: pointer;
+}
+
+.register-button button:hover {
+   border: 2px solid rgb(255, 166, 0) ;
+}
+
+@media screen and (max-width: 768px) {
+   .container {
+      flex-direction: column;
+      height: auto;
+   }
+
+   .img-cadastro {
+      display: none;
+   }
+
+   .form-cadastro {
+      width: 100%;
+      padding: 30px 20px;
+   }
+
+   .form-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+   }
+
+   .form-header h1 {
+      font-size: 35px;
+   }
+
+   .login-button button a {
+      font-size: 18px;
+   }
+
+   .register-button button {
+      width: 100%;
+      font-size: 20px;
+   }
+
+   .form-content input {
+      font-size: 16px;
+   }
+
+   .remember-password {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
 }
