@@ -155,7 +155,7 @@ body {
    font-weight: 500;
    font-size: 22px;
    padding: 12px 30px;
-   background-color: rgb(250, 229, 190);
+   background-color: rgb(255, 202, 104);
    border: none;
    border-radius: 26px;
    border: 1px solid rgb(244, 174, 45) ;
@@ -165,6 +165,9 @@ body {
 .register-button button:hover {
    border: 2px solid rgb(255, 166, 0) ;
 }
+
+
+
 
 @media screen and (max-width: 768px) {
    .container {

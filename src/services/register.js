@@ -1,15 +1,23 @@
-import VerifyFields from '.././utils/validation.js'
-import Toast from '.././utils/toast.js'
+import askUserToChooseBoolean from '../utils/choose-modal.js'
+import VerifyFields from '../utils/validation.js'
+import Toast from '../utils/toast.js'
 const axiosClient = axios
 
 
 const url_register = "http://localhost:3000/register"
 
 
-const postUser = async () => {
-   const name = document.getElementById('name').value
+const registerUser = async () => {
+   let name = document.getElementById('name').value
    const email = document.getElementById('email').value
    const password = document.getElementById('password').value
+   
+   if (name === "") {
+      const userAccepted = await askUserToChooseBoolean()
+      console.log(userAccepted)
+      if (userAccepted) 
+      name = email.split("@")[0].split(/[\._\s]/)[0]
+   }
 
    const data = {
       name,
@@ -46,13 +54,13 @@ const postUser = async () => {
          return null
       }
    }
-
-
 }
 
 const buttonRegister = document.getElementById('register-button');
 buttonRegister.addEventListener('click', async (e) => {
-   const res = await postUser()
+   e.preventDefault()
+   e.stopPropagation()
+   const res = await registerUser()
 
    if (res && res.status == 201) {
       Toast({
@@ -66,9 +74,14 @@ buttonRegister.addEventListener('click', async (e) => {
             message: "Estamos te redirecionando para o login...",
             color1: "#00b072ff",
             color2: "#96c93d",
-            position: "center"
-         });
+            position: "center",
+            onclose: "login.html"
+         }); 
       }, 2500);
+      
+             
    }
 })
+
+
 

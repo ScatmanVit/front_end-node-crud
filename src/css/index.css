@@ -1,10 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+*:not(dialog) {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: "Funnel Sans", sans-serif;
+}
+
+dialog::backdrop {
+   background-color: rgb(0, 0, 0, 0.5);
+}
+
+dialog {
+   border: none;
+   width: min(90%, 400px);
+   border-radius: 24px;
+   padding: 18px;
+   overflow: hidden;
+}
+
+.header-modal {
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   margin-bottom: 17px;
+}
+
+.header-modal i {
+   cursor: pointer;
+   transition: all 200ms;
+}
+
+.header-modal i:hover {
+   transform: scale(1.1);
+}
+
+.header-modal h2 {
+   color: #222;
+   font-weight: 400;
+   font-size: 25px;
+}
+
+.content-modal {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 10px;
+}
+
+.content-modal h3 {
+   font-weight: 400;
+   color: #222;
+   margin-top: 17px;
+}
+
+.content-modal p {
+   color: #444
+}
+
+.choose-modal {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.choose-modal #button-choose-yes {
+   padding: 4px 18px;
+   font-size: 20px;
+   border-radius: 20px;
+   background-color: rgb(190, 250, 190);
+   border: 1px solid rgb(0, 255, 0);
+   cursor: pointer;
+   transition: all 170ms;
+}
+
+.choose-modal #button-choose-yes:hover {
+   transform: scale(1.1);
+}
+
+
+.choose-modal #button-choose-not {
+   padding: 4px 18px;
+   font-size: 20px;
+   border-radius: 20px;
+   background-color: rgb(251, 188, 186);
+   border: 1px solid rgb(255, 0, 0) ;
+   cursor: pointer;
+   transition: all 170ms;
+}
+
+.choose-modal #button-choose-not:hover {
+   transform: scale(1.1);
 }
 
 body {
@@ -13,7 +98,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: azure;
+   background-color: rgb(227, 238, 238);
 }
 
 .container {
@@ -22,6 +107,7 @@ body {
    display: flex;
    box-shadow: 5px 5px 10px rgba(0,0,0, .212);
    border-radius: 20px;
+   background-color: azure;
 }
 
 
@@ -166,6 +252,9 @@ body {
 .register-button button:hover {
    border: 2px solid rgb(255, 166, 0) ;
 }
+
+
+
 
 @media screen and (max-width: 768px) {
    .container {

@@ -1,4 +1,5 @@
 const VerifyFields = (data) => {
+   
    if(!data.name || !data.email || !data.password) {
       
       return true;
@@ -6,5 +7,6 @@ const VerifyFields = (data) => {
       return false;
    }
 }
+
  
 export default VerifyFields

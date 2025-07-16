@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<head> 
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="src/css/login.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
    <title>Login</title>
 </head>
 <body>
+
    <div class="container">
 
       <div class='img-cadastro'>
@@ -14,7 +17,7 @@
       </div>
 
       <div class="form-cadastro">
-         <form action="">
+         <form>
             <div class="form-header">
                   <h1>Login</h1>
             <div class="login-button">
@@ -54,15 +57,17 @@
                </div>
             </div>
             <div class="register-button">
-               <button id="register-button" type="button">
+               <button id="login-button" type="button">
                   Login
                </button>
             </div>
             
          </form>
       </div>
-
-      
    </div>
+
+   <script type="module" src="src/services/login.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
