@@ -1,10 +1,10 @@
 import showSequenceToast from '../utils/show-sequence-toast.js';
 import VerifyFields from '../utils/validation.js'
+import { url_api } from '../config/url_api.js'
 import Toast from '../utils/toast.js'
 const axiosClient = axios
 
- 
-const url_login = "http://localhost:3000/login"
+const url_login = url_api + "/login"
 
 const userLogin = async () => {
    const email = document.getElementById('email').value

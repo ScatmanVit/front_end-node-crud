@@ -2,11 +2,10 @@ import askUserToChooseBoolean from '../utils/choose-modal.js'
 import showSequenceToast from "../utils/show-sequence-toast.js"
 import VerifyFields from '../utils/validation.js'
 import Toast from '../utils/toast.js'
+import { url_api } from '../config/url_api.js'
 const axiosClient = axios
 
-
-const url_register = "http://localhost:3000/register"
-
+const url_register = url_api + "/register"
 
 const registerUser = async () => {
    let name = document.getElementById('name').value
