@@ -1,4 +1,5 @@
 import askUserToChooseBoolean from '../utils/choose-modal.js'
+import showSequenceToast from "../utils/show-sequence-toast.js"
 import VerifyFields from '../utils/validation.js'
 import Toast from '../utils/toast.js'
 const axiosClient = axios
@@ -62,25 +63,7 @@ buttonRegister.addEventListener('click', async (e) => {
    e.stopPropagation()
    const res = await registerUser()
 
-   if (res && res.status == 201) {
-      Toast({
-         message: "Cadastrado efetuado com sucesso!",
-         color1: "#00b072ff",
-         color2: "#96c93d",
-         position: "center",
-      });
-      setTimeout(() => {
-         Toast({
-            message: "Estamos te redirecionando para o login...",
-            color1: "#00b072ff",
-            color2: "#96c93d",
-            position: "center",
-            onclose: "login.html"
-         }); 
-      }, 2500);
-      
-             
-   }
+   showSequenceToast(res);
 })
 
 

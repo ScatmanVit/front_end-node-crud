@@ -1,3 +1,4 @@
+import showSequenceToast from '../utils/show-sequence-toast.js';
 import VerifyFields from '../utils/validation.js'
 import Toast from '../utils/toast.js'
 const axiosClient = axios
@@ -46,20 +47,5 @@ const loginButton = document.getElementById('login-button')
 loginButton.addEventListener('click', async () => {
    const res = await userLogin()
    
-   if(res && res.status === 200){
-      Toast({
-         message: "Login efetuado com sucesso!",
-         color1: "#00b072ff",
-         color2: "#96c93d",
-         position: "center",
-      });
-      setTimeout(() => {
-         Toast({
-            message: "Estamos te redirecionando para a Home...",
-            color1: "#00b072ff",
-            color2: "#96c93d",
-            position: "center"
-         });
-      }, 2500);
-   }
+   showSequenceToast(res)
 })
