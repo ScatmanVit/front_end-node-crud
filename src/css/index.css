@@ -105,7 +105,7 @@ body {
    width: 90%;
    height: 90vh;
    display: flex;
-   box-shadow: 5px 5px 10px rgba(0,0,0, .212);
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
    border-radius: 20px;
    background-color: azure;
 }
