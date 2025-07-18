@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+<head> 
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../css/list-users.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
    <title>Lista de Usuários</title>
 </head>
 <body>
@@ -28,16 +29,24 @@
          <div class="users-manager-box">
             
             <div class="user-box">
-               <div class="user-info">
+               <div id="victorribeirobaradel@gmail.com" class="user-info">
                   <div class="user-content">
                      <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" />
                      <p>Victor Ribeiro Baradel</p> <!-- Colocar ... pontinhos para caso ser muito grande no JS-->
-                     <p class="user-email-content">victorribeirobaradel@gmail.com</p>
-                     <p>Admin</p>
-                     <p>12:04/2025</p>
+                     <p 
+                        class="user-email-content" 
+                     >
+                        victorribeirobaradel@gmail.com
+                     </p>
+                     <p>
+                        Admin
+                     </p>
+                     <p>
+                        12:04/2025
+                     </p>
                   </div>
                    <div class="user-info-icons">
-                        <i class="fa-solid fa-trash"></i>|
+                        <i class="fa-solid fa-trash" user-object="victorribeirobaradel@gmail.com"></i>|
                         <i class="fa-solid fa-pen-to-square"></i>
                   </div>
                   
@@ -230,5 +239,8 @@
 
       </div>
    </div>
+   <script type="module" src="../services/list-users.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
