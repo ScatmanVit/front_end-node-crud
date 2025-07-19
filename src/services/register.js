@@ -44,7 +44,7 @@ const registerUser = async () => {
       } catch (err) {
          console.error(err)
          const serverMessage = err.response?.data?.message || "Erro ao cadastrar";
-
+         console.log(serverMessage)
          Toast({
             message: serverMessage,
             color1: "#9B2A2A",
@@ -62,7 +62,13 @@ buttonRegister.addEventListener('click', async (e) => {
    e.stopPropagation()
    const res = await registerUser()
 
-   showSequenceToast(res);
+   const statusCode = res.status
+   const role = "none"
+   const page = "register"
+   showSequenceToast(statusCode, role, page);
+   setTimeout(() => {
+      window.location.href = "src/pages/login.html"
+   }, 4200)
 })
 
 

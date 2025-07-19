@@ -11,10 +11,6 @@ em qual lugar dentro de uma div ele tem que por */
 let url_API = url_api + "/delete/user/"
 
 
-
-
-
-
 /* Deletar um item da lista*/
 const buttonTrash = document.querySelectorAll('.fa-trash')
 buttonTrash.forEach(button => {

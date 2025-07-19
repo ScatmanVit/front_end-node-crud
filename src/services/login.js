@@ -30,7 +30,7 @@ const userLogin = async () => {
          console.log(res)
          return res
       } catch (err) {
-         const serverMessage = err.response?.data?.message || "Erro ao cadastrar";
+         const serverMessage = err.response?.data?.message || "Erro ao logar";
          Toast({
             message: serverMessage,
             color1: "#9B2A2A",
@@ -44,8 +44,32 @@ const userLogin = async () => {
 
 
 const loginButton = document.getElementById('login-button')
-loginButton.addEventListener('click', async () => {
-   const res = await userLogin()
-   
-   showSequenceToast(res)
+loginButton.addEventListener('click', async (e) => {
+   e.preventDefault()
+   let token = localStorage.getItem("token");
+   let role = localStorage.getItem("role")
+
+
+
+   if (!token) {
+      const res = await userLogin();
+      token = res.data.token;
+      role = res.data.role;
+      
+      if (token, role) {
+         localStorage.setItem("token", token);
+         localStorage.setItem("role", role)
+      }
+   } else {
+      showSequenceToast()
+      const page = "login"
+      
+      role === "user" 
+      ? window.location.href = "profile-user.html"
+      : window.location.href = "list-users.html"
+      role  === "user" && showSequenceToast(res.status, role, page)
+   }
+
+      
+ 
 })

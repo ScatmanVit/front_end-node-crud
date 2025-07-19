@@ -1,22 +1,26 @@
 import Toast from "./toast.js"
 
-async function showSequenceToast(res) {
-  if (res && (res.status === 201 || res.status === 200)) {
+async function showSequenceToast(statusCode, role, page) {
+  if (statusCode === 201 || statusCode === 200) {
     await Toast({
-      message: `${res.status === 201 ? "Cadastro" : "Login"} efetuado com sucesso!`,
+      message: `${statusCode === 201 ? "Cadastro" : "Login"} efetuado com sucesso!`,
       color1: "#00b072ff",
       color2: "#96c93d",
       position: "center",
       duration: 2000,
     });
+
     await Toast({
-      message: `Estamos te redirecionando para o ${res.status === 201 ? "Login" : "seu perfil"}...`,
+      message: `Estamos te redirecionando para ${
+        page === "register"
+          ? "o login"
+          : (role === "user" ? "o seu perfil" : "a dashboard")
+      }...`,
       color1: "#00b072ff",
       color2: "#96c93d",
       position: "center",
       duration: 2000,
     });
-    window.location.href = "login.html";
   }
 }
 
