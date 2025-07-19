@@ -65,10 +65,10 @@ buttonRegister.addEventListener('click', async (e) => {
    const statusCode = res.status
    const role = "none"
    const page = "register"
-   showSequenceToast(statusCode, role, page);
-   setTimeout(() => {
-      window.location.href = "src/pages/login.html"
-   }, 4200)
+   await showSequenceToast(statusCode, role, page);
+   
+   window.location.href = "src/pages/login.html"
+   
 })
 
 

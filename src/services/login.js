@@ -42,34 +42,47 @@ const userLogin = async () => {
    }
 }
 
+window.addEventListener("load", () => {
+  const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length > 0 && navEntries[0].type === "back_forward") {
+    
+   localStorage.removeItem("token")
+   localStorage.removeItem("role")
+  }
+});
 
 const loginButton = document.getElementById('login-button')
-loginButton.addEventListener('click', async (e) => {
-   e.preventDefault()
-   let token = localStorage.getItem("token");
-   let role = localStorage.getItem("role")
+   loginButton.addEventListener('click', async () => {
+   
+   let tokenLocal = localStorage.getItem("token");
+   let roleLocal = localStorage.getItem("role")
+   const page = 'login'
+   const statusGl = 200
 
-
-
-   if (!token) {
+   if(!tokenLocal && !roleLocal) {
       const res = await userLogin();
-      token = res.data.token;
-      role = res.data.role;
       
-      if (token, role) {
+      const token = res.data.token;
+      const role = res.data.role;
+      const statusCode = res.status;
+
+      await showSequenceToast(statusCode, role, page)
+      role === "user" 
+         ? window.location.href = "profile-user.html"
+         : window.location.href = "list-users.html"
+       
+      if (token && role) {
          localStorage.setItem("token", token);
          localStorage.setItem("role", role)
-      }
+   
+      } 
    } else {
-      showSequenceToast()
-      const page = "login"
-      
-      role === "user" 
-      ? window.location.href = "profile-user.html"
-      : window.location.href = "list-users.html"
-      role  === "user" && showSequenceToast(res.status, role, page)
-   }
+         const role = localStorage.getItem("role")
 
-      
- 
+         await showSequenceToast(statusGl, role, page)
+         role === "user" 
+            ? window.location.href = "profile-user.html"
+            : window.location.href = "list-users.html"
+      }
+
 })
