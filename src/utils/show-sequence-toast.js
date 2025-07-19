@@ -24,4 +24,6 @@ async function showSequenceToast(statusCode, role, page) {
   }
 }
 
-export default showSequenceToast;
+
+export default showSequenceToast
+

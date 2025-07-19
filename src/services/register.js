@@ -11,9 +11,11 @@ const registerUser = async () => {
    let name = document.getElementById('name').value
    const email = document.getElementById('email').value
    const password = document.getElementById('password').value
-   
+   const modalChoose = document.getElementById('modal-choose-name')
+
+
    if (name === "") {
-      const userAccepted = await askUserToChooseBoolean()
+      const userAccepted = await askUserToChooseBoolean(modalChoose)
       console.log(userAccepted)
       if (userAccepted) 
       name = email.split("@")[0].split(/[\._\s]/)[0]

@@ -1,11 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+*:not(dialog) {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: "Funnel Sans", sans-serif;
 }
+
+dialog::backdrop {
+   background-color: rgb(0, 0, 0, 0.5);
+}
+
+dialog {
+   border: none;
+   width: min(90%, 400px);
+   border-radius: 24px;
+   padding: 22px;
+   overflow: hidden;
+}
+
+.header-modal {
+   display: flex;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   margin-bottom: 10px;
+   
+}
+
+.header-modal i {
+   cursor: pointer;
+   transition: all 200ms;
+}
+
+.header-modal i:hover {
+   transform: scale(1.1);
+}
+
+.header-modal h2 {
+   color: #222;
+   font-weight: 400;
+   font-size: 22px;
+}
+
+
+.choose-modal {
+   display: flex;
+   justify-content: space-evenly;
+   border-top: 1px solid #666;
+   padding-top: 40px;
+}
+
+.choose-modal #button-choose-yes {
+   padding: 4px 18px;
+   font-size: 20px;
+   border-radius: 20px;
+   background-color: rgb(190, 250, 190);
+   border: 1px solid rgb(0, 255, 0);
+   cursor: pointer;
+   transition: all 170ms;
+}
+
+.choose-modal #button-choose-yes:hover {
+   transform: scale(1.1);
+}
+
+
+.choose-modal #button-choose-not {
+   padding: 4px 18px;
+   font-size: 20px;
+   border-radius: 20px;
+   background-color: rgb(251, 188, 186);
+   border: 1px solid rgb(255, 0, 0) ;
+   cursor: pointer;
+   transition: all 170ms;
+}
+
+.choose-modal #button-choose-not:hover {
+   transform: scale(1.1);
+}
+
 
 body {
    width: 100%;

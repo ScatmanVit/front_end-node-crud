@@ -1,9 +1,8 @@
-const askUserToChooseBoolean = () => {
+const askUserToChooseBoolean = (modalChoose, buttonClose) => {
    return new Promise((resolve) => {
-      const modalChoose = document.getElementById('modal-choose-name')
       const buttonYes = document.getElementById('button-choose-yes')
       const buttonNot = document.getElementById('button-choose-not')
-      const buttonClose = document.getElementById('close-modal')
+   
 
       modalChoose.showModal()
 
@@ -27,7 +26,11 @@ const askUserToChooseBoolean = () => {
 
       buttonYes.addEventListener('click', onYes)
       buttonNot.addEventListener('click', onNot)
-      buttonClose.addEventListener('click', onNot)
+      if(buttonClose) {
+         buttonClose.addEventListener('click', onNot)
+      } else {
+         return
+      }
    })
 }
 
