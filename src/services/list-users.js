@@ -1,31 +1,16 @@
-// import askUserToChooseBoolean from '../utils/choose-modal.js';
 import deleteUser from './list-users/deleteUser.js';
 import usersList from './list-users/usersList.js';
+import logout from './list-users/logout.js';
 import Toast from '../utils/toast.js'
 
-
-/* insertAdjacentHTML serve para adcionar
- um novo elemento na dom via JS */
-/* ele utilza de posições para saber 
-em qual lugar dentro de uma div ele tem que por */
-
-
-// window.location.reload();
 const buttonReload = document.querySelector('.reload-manager')
 buttonReload.addEventListener("click", () => {
    window.location.reload();
 })
 
-
-
 window.addEventListener('load', async () => {
-   const navEntries = performance.getEntriesByType('navigation')
-   if(navEntries.length > 0 && navEntries[0].type == 'reload') {
-      console.log("A página foi recarregada!")
-      // função a ser chamada
-      await listUsers()
-   }
-})
+   await listUsers();
+});
 
 const listUsers = async () => {
   const res = await usersList();
@@ -33,11 +18,7 @@ const listUsers = async () => {
 
   for (let i = 0; i < res.data.users.length; i++) {
     const user = res.data.users[i];
-
-    // Pegar as duas primeiras palavras do nome
     const nomes = user.name.split(" ").slice(0, 2);
-
-
 
     list.insertAdjacentHTML('beforeend', `
       <div id="${user._id}" class="user-info">
@@ -56,8 +37,6 @@ const listUsers = async () => {
     `);
   }
 };
-
-
 
 
 const list = document.querySelector('.user-box');
@@ -85,4 +64,24 @@ list.addEventListener('click', async (event) => {
       }
     }
   }
+});
+
+
+const buttonLogout = document.getElementById('logout')
+buttonLogout.addEventListener('click', async () => {
+  const res = await logout()
+
+  if(res && res.status === 200) {
+    localStorage.removeItem("token")
+    localStorage.removeItem("role")
+    Toast({
+      message: "Logout efetuado com sucesso!",
+      color1: "#00b072ff",
+      color2: "#96c93d",
+      position: "center",
+    });
+    setTimeout(() => {
+      window.location.href = "../pages/login.html"
+    }, 2500)
+  } 
 });
