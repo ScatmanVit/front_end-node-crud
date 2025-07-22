@@ -1,7 +1,7 @@
 
 # Front-End Vanilla para CRUD de Usuários
 
-Este projeto é o **front-end** para a API Node.js [API Node CRUD](link-da-api-se-tiver).  
+Este projeto é o **front-end** para a API Node.js [API Node CRUD]([https://github.com/ScatmanVit/pratica_](https://github.com/ScatmanVit/pratica_api_node-crud-users)).  
 Ele foi desenvolvido com **HTML, CSS e JavaScript puro (Vanilla JS)**, com foco em **boas práticas**, **organização modular** e **integração com back-end real** usando **Axios**.
 
 ---
@@ -35,7 +35,6 @@ Ele foi desenvolvido com **HTML, CSS e JavaScript puro (Vanilla JS)**, com foco 
 
 ---
 
-## 📂 Estrutura do Projeto
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -47,20 +46,39 @@ Ele foi desenvolvido com **HTML, CSS e JavaScript puro (Vanilla JS)**, com foco 
 
 ---
 
-## 📂 Estrutura do Projeto ( INCOMPLETA - em desenvolvimento)
+## 📂 Estrutura do Projeto
 
 ```plaintext
 front-end-node-crud/
-├── css/              # Estilos do projeto
-├── utils/             # Funções utilitárias (Toast, validações, etc.)
-├── services/
-│   ├── register.js   # Lógica da página de cadastro
-│   ├── login.js      # Lógica da página de login
-├── index.html        # Página inicial
-├── register.html     # Tela de cadastro
-├── login.html        # Tela de login
-├── pages             # **em breve mais telas**
-└── README.md
+├── assets/             # Arquivos de mídia e imagens (SVG, ícones, etc.)
+│   └── undraw_my-password_iyga.svg
+├── config/             # Configurações globais (como URL da API)
+│   └── url_api.js
+├── css/                # Estilos CSS organizados por página
+│   ├── index.css
+│   ├── list-users.css
+│   ├── login.css
+│   └── profile.css
+├── pages/              # Páginas HTML completas
+│   ├── list-users.html
+│   ├── login.html
+│   └── profile-user.html
+├── services/           # Lógica de cada página (requisições e manipulação de dados)
+│   ├── list-users/
+│   │   └── list-users.js
+│   ├── login.js
+│   ├── logout.js
+│   ├── profile.js
+│   └── register.js
+├── utils/              # Funções reutilizáveis e interações de UI
+│   ├── choose-modal.js
+│   ├── show-sequence-toast.js
+│   ├── toast.js
+│   └── validation.js
+├── .gitignore          # Arquivos e pastas ignoradas pelo Git
+├── index.html          # Página inicial (gateway da aplicação)
+└── README.md           # Documentação geral do projeto
+
 ```
 
 ## 🚀 Como Executar
@@ -73,7 +91,7 @@ git clone https://github.com/seu-usuario/front-end-node-crud.git
 - 2 Abra os arquivos HTML no navegador ou use uma extensão como Live Server no VSCode.
 
 - 3 Certifique-se de que a API back-end (Node.js) está rodando.
-  - 👉 Link do back-end(em breve) 
+  - 👉 Link do back-end [BACK-END](https://github.com/ScatmanVit/pratica_api_node-crud-users)
 
 - 4 Configure a URL base da API no arquivo utils/api.js (ou equivalente):
 ```bash
@@ -84,3 +102,4 @@ const API_BASE_URL = "nome-url";
 
 ## 👤 Autor
 Victor Ribeiro Baradel
+Feito com ☕
