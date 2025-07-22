@@ -1,10 +1,8 @@
 import Toast from '../utils/toast.js';
-import { url_api } from '../config/url_api.js';
 const axiosClient = axios;
 
-const url_API = url_api + "/logout"
 
-const logout = async () => {
+const logout = async (url_API) => {
    try {
       const token = localStorage.getItem('token')
       const res = await axiosClient.get(url_API, {
