@@ -17,7 +17,6 @@ body {
    overflow-y: hidden;
 }
 
-/* Container Principal */
 .container {
    width: 90%;
    height: 90vh;
@@ -29,7 +28,7 @@ body {
    padding: 20px;
 }
 
-/* Header */
+
 .manager-header {
    display: flex;
    justify-content: space-between;
@@ -97,16 +96,16 @@ body {
 
 .user-info-icons .fa-trash { cursor: pointer }
 .user-info-icons .fa-trash:hover {
-   color: #ef4444; /* vermelho */
+   color: #ef4444;
 }
 
 .user-info-icons .fa-pen-to-square { cursor: pointer }
 .user-info-icons .fa-pen-to-square:hover {
-   color: #3b82f6; /* azul */
+   color: #3b82f6; 
 }
 
 
-/* Área de Usuários */
+
 .users-manager-box {
    width: 100%;
    height: 190%;
@@ -119,10 +118,9 @@ body {
 }
 
 .user-box {
-
    scroll-behavior: smooth;
    width: 95%;
-   height: 40%;
+   height: 32%;
    max-height: calc(90vh - 100px);  
    overflow-y: scroll;
    overflow-x: hidden;
