@@ -202,20 +202,20 @@ body {
 }
 
 ::-webkit-scrollbar {
-   width: 10px; /* Mais largo */
+   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-   background: transparent; /* Remove a faixa clara */
+   background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-   background: #d1d5db; /* Cinza visível */
+   background: #d1d5db; 
    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-   background: #9ca3af; /* Mais escuro no hover */
+   background: #9ca3af; 
 }
 
 @media (max-width: 768px) {

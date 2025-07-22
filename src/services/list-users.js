@@ -1,6 +1,6 @@
 import deleteUser from './list-users/deleteUser.js';
 import usersList from './list-users/usersList.js';
-import logout from './list-users/logout.js';
+import logout from './logout.js';
 import Toast from '../utils/toast.js'
 
 const buttonReload = document.querySelector('.reload-manager')

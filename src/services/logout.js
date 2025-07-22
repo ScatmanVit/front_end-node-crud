@@ -1,5 +1,5 @@
-import Toast from './../../utils/toast.js';
-import { url_api } from './../../config/url_api.js';
+import Toast from '../utils/toast.js';
+import { url_api } from '../config/url_api.js';
 const axiosClient = axios;
 
 const url_API = url_api + "/logout"
