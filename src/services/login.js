@@ -106,5 +106,4 @@ const loginButton = document.getElementById('login-button')
          } 
 
       }
-
 })

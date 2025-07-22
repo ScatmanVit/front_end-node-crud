@@ -2,7 +2,7 @@ import Toast from './../../utils/toast.js';
 import { url_api } from '../../config/url_api.js';
 const axiosClient = axios
 
-const url_API = url_api + "/list-users"
+const url_API = url_api + "/admin/list-users"
 
 const usersList = async () => {
    try {

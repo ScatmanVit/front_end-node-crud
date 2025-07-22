@@ -2,6 +2,7 @@ import deleteUser from './list-users/deleteUser.js';
 import usersList from './list-users/usersList.js';
 import logout from './logout.js';
 import Toast from '../utils/toast.js'
+import { url_api } from '../config/url_api.js';
 
 const buttonReload = document.querySelector('.reload-manager')
 buttonReload.addEventListener("click", () => {
@@ -31,7 +32,7 @@ const listUsers = async () => {
         </div>
         <div class="user-info-icons">
           <i class="fa-solid fa-trash" user-object="${user._id}"></i> |
-          <i class="fa-solid fa-pen-to-square"></i>
+          <i class="fa-solid fa-pen-to-square" user-object="${user._id}" data-modal="update-user"></i>
         </div>
       </div>
     `);
@@ -66,10 +67,11 @@ list.addEventListener('click', async (event) => {
   }
 });
 
+const url_API = url_api + "/admin/logout"
 
 const buttonLogout = document.getElementById('logout')
 buttonLogout.addEventListener('click', async () => {
-  const res = await logout()
+  const res = await logout(url_API)
 
   if(res && res.status === 200) {
     localStorage.removeItem("token")
@@ -85,3 +87,5 @@ buttonLogout.addEventListener('click', async () => {
     }, 2500)
   } 
 });
+
+

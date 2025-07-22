@@ -2,7 +2,7 @@ import Toast from '../../utils/toast.js'
 import { url_api } from '../../config/url_api.js';
 const axiosClient = axios
 
-const url_API = url_api + "/delete/user/"
+const url_API = url_api + "/admin/delete/user/"
 
 const deleteUser = async (id) => {
    if (!id) {
